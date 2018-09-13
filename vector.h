@@ -27,15 +27,15 @@ class Vector {
         };
              
         void set(T datum, int* coordinates) {
-
-        }; // TODO
+            data[op(coordinates, dimensionSizes, dimensions)] = datum;
+        };
              
         T get(int* coordinates) {
-
-        }; // TODO
+            return data[op(coordinates, dimensionSizes, dimensions)];
+        };
 
         ~Vector(){
-            // TODO
+            delete[] data;
         }
 };
 
