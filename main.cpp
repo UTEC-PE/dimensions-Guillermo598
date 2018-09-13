@@ -6,9 +6,14 @@
 using namespace std;
 
 template <typename T>
-struct Dimensions {      
+struct Dimensions {
     int operator()(int* coordinates, int* sizes, int dimensions) {
-        // TODO
+        int n = 0;
+        for (int i = dimensions - 1; i >= 0; i--) {
+            n *= sizes[i];
+            n += coordinates[i];
+        }
+        return n;
     }
 };
 
@@ -18,6 +23,10 @@ struct Integer {
 };
 
 int main(int argc, char *argv[]) {
-    system("pause");
+    int DimSize[3] = {2, 2, 2};
+    Vector<Integer> test(3, DimSize);
+    //system("pause");
+
+
     return EXIT_SUCCESS;
 }
